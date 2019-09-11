@@ -1,0 +1,16 @@
+- Rodar instalações básicas do Flask
+- lembrar que quando vai dar o git clone, tem que estar em c:\projects e não ter criado nada ainda.
+- ver se as versões de python e pip estão todas certinhas
+
+- O site de documentação do Flask é:
+	https://flask.palletsprojects.com/en/1.1.x/
+
+- Criar site basicão, para rodar o flask seguir instruções RiskPanel - 07
+- Pode acessar o site em http://http://127.0.0.1:5000/ ou http://localhost:5000/
+
+Uma maneira de rodar o debug é via variáveis de sistema
+> set FLASK_DEBUG=1
+
+- Existe duas maneiras de rodar o flask. uma é setar as variáveis de ambiente e dar um flask run. A outra é rodar > python flaskblog.py
+
+- Lembrar que se colocassemos localhost:5000/about , uma route que não existe, ele daria um not found, e um error do tipo 404 da requisição GET  
