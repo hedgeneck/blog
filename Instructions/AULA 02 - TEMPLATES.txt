@@ -1,0 +1,4 @@
+- Lembrar que digitando html e dando tab no sublime aparece toda estrutura básica de uma pagina html
+
+- estudar forma das funções for e if-else
+- estudar template inheritance

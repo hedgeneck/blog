@@ -1,0 +1,38 @@
+- Rodar instalações básicas do Flask
+- lembrar que quando vai dar o git clone, tem que estar em c:\projects e não ter criado nada ainda.
+- ver se as versões de python e pip estão todas certinhas
+
+- O site de documentação do Flask é:
+	https://flask.palletsprojects.com/en/1.1.x/
+
+- Criar site basicão, para rodar o flask seguir instruções RiskPanel - 07
+- Pode acessar o site em http://http://127.0.0.1:5000/ ou http://localhost:5000/
+
+Uma maneira de rodar o debug é via variáveis de sistema
+> set FLASK_DEBUG=1
+
+- Existe duas maneiras de rodar o flask. uma é setar as variáveis de ambiente e dar um flask run. A outra é rodar > python flaskblog.py
+
+- Lembrar que se colocassemos localhost:5000/about , uma route que não existe, ele daria um not found, e um error do tipo 404 da requisição GET
+
+- Ao término de cada aula, fazer atualização do GIT
+
+Algumas coisas sobre o > git origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+   se já tiver alguma coisa no origin, acho prudente remover e recolocar
+   > git remote remove origin  
