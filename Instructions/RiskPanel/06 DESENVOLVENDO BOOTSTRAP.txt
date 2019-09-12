@@ -1,0 +1,3 @@
+Existe duas maneiras de ativar bootstrap, uma é na veia copiando os arquivos e adicionando as linhas
+
+A outra é usando extends e > pip install flask-bootstrap

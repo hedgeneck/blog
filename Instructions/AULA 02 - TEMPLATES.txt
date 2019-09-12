@@ -2,3 +2,16 @@
 
 - estudar forma das funções for e if-else
 - estudar template inheritance
+
+BOOTSTRAP
+- Para incluir bootstrap no projeto, copia o código no site do bootstrap
+- Bootstrap starter example https://getbootstrap.com/docs/4.3/getting-started/introduction/
+
+- vai em getbootstrap.com -> Documentation -> Getting Started -> Starter template
+- O Corey Schafer acha melhor não usar a flask extension chamada flask-bootstrap, se você manja de bootstrap não tem porque usar esse engodo, usa diretamente que vai ter mais controle
+
+- usar os snippets fornecidos pelo Corey Schaffer em https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask_Blog/snippets
+
+- colar o navigation snippet
+- substituir o main snippet
+- criar a main.css e colocar o snippet

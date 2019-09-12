@@ -1,0 +1,20 @@
+- A primeira opção que surgiu na cabeça é VPS locaweb, sugerido pelo Samuca. O serviço é do tipo Cloud, o que quer dizer que podemos rodar scripts de atualização e etc, e não apenas servir um backend em php.
+	https://www.locaweb.com.br/cloud/
+- Eles tinham opções mais caras como Cloud Hosting e Cloud Server Pro. A mais baratinha era a VPS Locaweb.
+	https://www.locaweb.com.br/cloud/vps-locaweb/
+	acredito que os dados de login sejam
+	user: hedgeneck
+	senha: Gust84Hedge
+	notar como no site da locaweb é só Hedge, e pra acessar o servidor é Hedgeneck
+- A escolha optada foi 
+	VPS 512mb por R$15,90 por mês contendo
+	- 1 vCPU
+	- 20 GB de disco SSD
+	- 1 TB de transferência
+	Linux
+	não sei exatamente o que quer dizer os 512mb, acredito que seja a memória RAM do servidor.
+- A locaweb guarda o ip do meu computador 187.112.244.101
+- É fundamental saber a diferença entre um serviço de cloud e um serviço de hosting de sites
+- o help do serviço de cloud da locaweb se encontra em
+	https://ajuda.locaweb.com.br/categorias/cloud-hosting/
+- A confirmação de pagamento demorou uma noite. Fiz às nove da noite de um dia e chegou 06:30 do outro

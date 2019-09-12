@@ -1,0 +1,27 @@
+- Vem num mail uma mensagem dizendo que você já pode instalar o servidor, só clicar em Instalar Servidor para acessar o painel de administração
+- tem que dar um nome pro servidor, escolhi hedgeneck
+- Podia escolher as seguintes distribuições: centOS, Debian, Fedora, openSUSE, Ubuntu
+- Dentro de Ubuntu tinha as versões: 
+	14.04 LTS | 64
+	16.04 LTS | 64
+	18.04 LTS | 64
+- Ele pede pra escolher a forma de acessar o servidor, seja por Senha ou seja por chave pública
+- Escolhi a senha
+	Gust84Hedgeneck
+- O servidor demorou uma meia hora para instalar, segue as informações:
+	Domínio: vps15697.publiccloud.com.br
+	Usuário: root
+	IP público: 191.252.101.140
+	Zona: vps
+	Porta: 22
+		engraçado como tanto ssh quanto sftp usam porta 22
+- Instalar Putty e tentar acessar o servidor
+	https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+[Ver aba do Putty]
+- Para acessar os diretorios do servidor usaremos WinSCP
+	https://winscp.net/eng/download.php
+
+Eu me meti em uma confusão com SSH e acabei saindo digitando os comandos de 
+https://ubuntuforums.org/showthread.php?t=1543474
+tipo sudo service ssh start ou stop
+	sudo service sshd start ou stop

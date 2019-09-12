@@ -1,0 +1,46 @@
+Se precisar de alguma ferramenta de sqlite, tem o SQlite Studio
+https://sqlitestudio.pl/index.rvt?act=download
+
+Um designer bom de banco de dados é:
+https://ondras.zarovi.cz/sql/demo/?keyword=default
+
+Usaremos o SQL Alchemy, instala via comando
+pip install flask-sqlalchemy
+
+A documentação está em:
+https://flask-sqlalchemy.palletsprojects.com/en/2.x/
+
+app.config['SQLALCHEMY_DATABASE_URI'] o que é um URI?
+
+- cria o acesso ao sqlite
+- cria tabelas no model
+Ao criar o banco de dados, levar em conta as propriedades como primary key, unique, foreign_key, relationships
+
+- Para instalar o banco de dados ORM que foi projetado nos models, precisamos do flask migrate
+Precisaremos instalar o flask-migrate e o flask-script
+
+> pip install flask-migrate
+> pip install flask-script
+	eu nem sei direito o que o flask-script faz.. adiciona alguns comandos ao flask?
+O flask script inclui um manager, que irá permitir executar > python run.py com alguns comandos a mais, como
+> python run.py migrate
+
+se quisermos simplesmente rodar o servidor como faziamos com
+> flask run
+podemos usar
+> python run.py runserver
+
+entre os novos comandos, iniciamos o banco de dados
+> python run.py db init
+acho que ainda não criou o banco de dados sqlite
+agora já podemos migrar, e finalmente criar o banco de dados sqlite
+> python run.py db migrate
+depois de dar um migrate ele reservou memória mas ainda não jogou as coisas, ainda tem que dar um upgrade.
+> python run.py db upgrade
+- Quando o debug esta ativado, a cada modificação salva ele recarrega o servidor com as modificações
+
+- sempre que mudar a estrutura do banco de dados, rodar um migrate e depois um upgrade
+- Para deletar um bando de dados SQL basta deletar o arquivo .db (storage.db) e a pasta migrations
+- Informações sobre como deletar ou migrar bancos de dados em https://flask-migrate.readthedocs.io/en/latest/
+- Para fazer backup de um banco de dados, imagino que copiar o .db e a pasta migrations deve resolver.
+- Colocando o endereço relativo do sqlite no alchemy é suficiente para rodar as migrations, mas para inserir elementos no banco de dados é necessário fazer o endereço absoluto.

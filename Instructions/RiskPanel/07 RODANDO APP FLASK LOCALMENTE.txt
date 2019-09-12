@@ -1,0 +1,46 @@
+Vou tentar usar o video em
+https://www.youtube.com/watch?v=QjtW-wnXlUY
+É um canal legal cheio de linguagens!
+https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ/videos
+
+Tem um tutorial muito legal sobre um blog, mas é em mac
+https://www.youtube.com/watch?v=MwZwr5Tvyxo
+O tutorial do Corey Schafer realmente é muito foda
+
+Um curso legal da Júlia Rizza
+https://www.youtube.com/watch?v=r40pC9kyoj0
+Playlist: https://www.youtube.com/watch?v=r40pC9kyoj0&list=PL3BqW_m3m6a05ALSBW02qDXmfDKIip2KX
+	No primeiro vídeo 2 ela ensina uma maneira muito fácil com freeze de colocar os requirements do projeto e depois só instalar o que precisa.
+
+PEP 8 é um padrão de identação. o sublime tem verificador de PEP 8
+https://www.python.org/dev/peps/pep-0008/
+
+Para verificar se o Python está instalado, Wndows+S e digita python
+Outra maneira é digitar python no cmd e ver o que aparece. Depois exit() para sair do python
+Como verificar a versão do pip?
+Como atualizar tanto o python como o pip?
+sempre lembrar que para atualizar o pip, usar
+	> python -m pip install --upgrade pip
+
+Criar uma página para o FlaskApp C:/Projetos/FlaskApp
+Vai até a pasta com o cmd e cria um virtual environment
+	> py -m venv env
+	não sei direito pra que serve o py nem o -m
+	demora um pouco para executar mas ele cria um folder env dentro do FlaskApp
+Depois de criado, é necessário ativar o environment
+	> env\Scripts\activate
+	o comando não aparenta ser nada de cmd de windows, mas funciona.
+	na verdade o comando executa um .bat, outra hora tu olha o codigo para aprender a fazer scripts de cmd
+	para desativar o environment
+	> env\Scripts\deactivate
+Engraçado como a pasta muda e aparece um (env)
+	(env) C:\Projetos\FlaskApp>
+Finalmente para instalar o Flask digita
+	> pip install flask
+Depois de instalado o Flask, vamos criar um simple Flask App file que vai ser o main file
+Para setar como main file, tem que setar uma variável de ambiente no cmd
+	> set FLASK_APP=app.py
+	Dessa maneira o Flask vai saber quais arquivos olhar quando ele for rodar
+Para rodar o aplicativo Flask basta digitar no cmd
+	> flask run
+Tem uma maneira para atualizar automaticamente o site sem precisar reiniciar o server

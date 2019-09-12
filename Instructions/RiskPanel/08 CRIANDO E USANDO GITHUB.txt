@@ -1,0 +1,128 @@
+Irei criar um github
+
+www.github.com
+mail: hedgeneck@gmail.com
+username: hedgeneck
+password: gust84hedgeneck
+
+1 Criação do Repositório
+https://guides.github.com/activities/hello-world/
+In the upper right corner, next to your avatar or identicon, click  and then select New repository.
+Name your repository hello-world.
+Write a short description.
+Select Initialize this repository with a README.
+poderia adicionar um .gitignore
+- O ideal é criar com um readme pois sem nenhum arquivo não tem nenhum branch.
+
+2 Depois de criado o repositório no site, é preciso primeiramente copiar o código do site para a pasta. Usar esse procedimento quando estiver criando
+Vai até a pasta do código
+> git init
+> git clone https://github.com/hedgeneck/FlaskApp.git
+	# o problema do clone é que ele cria um diretório com o nome do repositório. 
+
+3 Depois de criado o repositório na página do github, vamos então conectar o código já produzido ao código pela primeira vez
+Vai até a pasta do código
+> git init
+> git add .
+> git commit -m "Estrutura Base de um Projeto Flask em MVC"
+> git remote add origin https://github.com/hedgeneck/FlaskApp.git
+> git push -u origin master
+
+4 Como ação de rotina para ir atualizando o github
+> git add .
+> git status
+> git commit -m "first commit"
+> git push -u origin master
+
+
+
+### GITHUB antigo extraído do projeto Timelines
+
+1 Criação do Repositório
+https://guides.github.com/activities/hello-world/
+In the upper right corner, next to your avatar or identicon, click  and then select New repository.
+Name your repository hello-world.
+Write a short description.
+Select Initialize this repository with a README.
+poderia adicionar um .gitignore
+- O ideal é criar com um readme pois sem nenhum arquivo não tem nenhum branch.
+
+2 Criação do Branch inicial
+Um Branch é tipo a versão que você está trabalhando, seria algo como gustavao-temp.txt gustavao-oficial.txt cada um desses files seria um branch
+Sempre que cria o repository, já é criado um branch master
+Para criar um novo branch 
+Go to your new repository hello-world.
+Click the drop down at the top of the file list that says branch: master.
+Type a branch name, readme-edits, into the new branch text box.
+Select the blue Create branch box or hit “Enter” on your keyboard
+agora dá pra ficar mudando de branch só clicando no botão de branch:
+On GitHub, saved changes are called commits. Each commit has an associated commit message
+
+3 Abrir Pull request
+Serve para pedir reviews, mostrar os diffs, e permitir o futuro merge, se possivel. Normalmente terão commits antes e depois do pull request antes de um merge. os commits antes do pull request são de quem fez as modificações e esta propondo, os commits depois do pull são depois da review
+você pode mencionar pessoas com @
+Click the  Pull Request tab, then from the Pull Request page, click the green New pull request button.
+In the Example Comparisons box, select the branch you made, readme-edits, to compare with master (the original).
+When you’re satisfied that these are the changes you want to submit, click the big green Create Pull Request button.
+Give your pull request a title and write a brief description of your changes.
+
+4 Merge your Pull Request
+com a pull request, vai aparecer 1 na aba de pull requests
+você clica na aba de pull requests, clica na pull, e clica no botao verde de Merge pull request
+Click the green Merge pull request button to merge the changes into master.
+Click Confirm merge.
+Go ahead and delete the branch, since its changes have been incorporated, with the Delete branch button in the purple box.
+depois de dar o merge sempre é bom deletar o branch, já que ele não será mais usado
+
+GIT
+https://guides.github.com/introduction/git-handbook/
+para jogar seu codigo no github, melhor o repositorio estar vazio
+para instalar o git e habilitar > git na command line, 
+https://git-scm.com/downloads
+se ja tem git instalado, para atualizar usar github
+
+…or create a new repository on the command line
+echo "# Timelines" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/gustcomer/Timelines.git
+git push -u origin master
+
+essa é a mais usada… or push an existing repository from the command line
+git remote add origin https://github.com/gustcomer/Timelines.git
+git push -u origin master
+
+se quiser remover alguma coisa do remote origin
+> git remote rm origin
+
+*** sempre que modificar alguma coisa usar
+> git add .
+> git status # se quiser
+> git commit -m "mudando um pouco o laravel"
+> git push -u origin master # mas só funciona se der o remote add antes
+# não precisa dar remote add pois só é necessário uma vez
+
+O salvamento do codigo da versao se divide em dois estagios
+1. git add # é o staging
+2. git commit # arquiva a versão efetivamente
+
+para armazenar o user e o password
+> git config credential.helper store
+> git pull
+
+para ver como estava o código em uma versão, usar
+> git checkout b650e4b
+e para voltar pra versão atual
+> git checkout master
+
+para dar o nome de uma versão, usar
+> git tag -a v1.0 -m "Stable version of the website"
+onde -a flag é annotated e -m é descriptive message
+pode dar checkout numa flag
+> git checkout 2.0.0
+
+para criar um novo branch
+> git branch crazy
+para mover-se para esse novo branch
+> git checkout crazy

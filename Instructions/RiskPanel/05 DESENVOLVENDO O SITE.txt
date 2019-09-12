@@ -1,0 +1,9 @@
+O site que estou me baseando é o https://pythonprogramming.net/creating-first-flask-web-app/
+Lembrar que os aplicativos estão em /var/www
+
+	@app.route('/user/<nome>')
+	def users(nome):
+	    return '<h1>Hello, {}!</h1>'.format(nome)
+	    
+o código acima rodou estranhamente, as vezes funcionava as vezes não. Só dava certo 100% das vezes quando reiniciava o apache
+service apache2 restart

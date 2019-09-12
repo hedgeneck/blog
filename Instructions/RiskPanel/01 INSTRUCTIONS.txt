@@ -1,0 +1,11 @@
+- Começanco um novo projeto que Deus nos abençoe
+- O projeto consiste basicamente de um backend com scripts de atualização de banco de dados, um banco de dados no meio sendo atualizado por scripts em R e no front um flask provavelmente com interface em bootstrap.
+- Usaremos muito banco de dados, R, shell...
+- Será usado como base educacional:
+	- o curso de banco de dados do riskacademy
+	- o curso de flask do sentdex https://www.youtube.com/watch?v=Lv1fv-HmkQo&list=PLQVvvaa0QuDc_owjTbIY4rbgXOFkUYOUB
+- O site do sentdex é https://pythonprogramming.net/ muito bom
+	https://pythonprogramming.net/creating-first-flask-web-app/
+
+Tutoriais alternativos de Flask
+	The Flask Mega-Tutorial

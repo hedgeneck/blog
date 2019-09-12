@@ -1,0 +1,92 @@
+- Instalar Putty e tentar acessar o servidor
+	https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+- Pra conectar no Putty basta abrir e colocar no host domain o dominio
+	vps15697.publiccloud.com.br
+- A porta deixa o que tava, 22.
+	- ele vai pedir user bota root
+	- ele vai pedir senha bota o que tu configurou Gust84Hedgeneck
+- Pra sair do Putty bota exit
+- Dá pra acessar o servidor também colocando o ip público
+
+Para acessar WinSCP basta botar no host
+vps15697.publiccloud.com.br ou o ip 191.252.101.140
+user: root
+senha Gust84Hedgeneck
+dá pra colocar o user antes ou depois
+
+DENTRO DO PUTTY
+- A primeira coisa que você deve fazer quando entra em um servidor é
+	sudo apt-get update
+- E depois
+	sudo apt-get upgrade
+apt-get update updates the list of available packages and their versions, but it does not install or upgrade any packages.
+apt-get upgrade actually installs newer versions of the packages you have. After updating the lists, the package manager knows about available updates for the software you have installed.
+
+1 ALTERAR SSH TIMEOUT LINUX
+cd /etc/ssh
+sudo nano ssh_config não é o arquivo que queremos
+sudo nano sshd_config 
+copiar as linhas:
+
+ClientAliveInterval 30
+TCPKeepAlive yes
+ClientAliveCountMax 99999
+
+Para Sair Ctrl+X , vai pedir pra salvar, da Y de yes, vai pedir nome do arquivo aperta enter pra não modificar
+E so falta dar um restart no serviço ssh
+	service ssh restart (no meu putty não apareceu nada mas acho que restartou. no video do cara, deu mensagem dizendo que finalizou e reiniciou)
+tentei tambem
+	sudo service sshd restart
+
+1.1 NANO é um editor de texto que se usa dentro de servidores linux
+	para procurar alguma palavra em nano, ctrl+w
+	para sair, ctrl+x
+	para deletar uma linha, ctrl+k
+
+https://pythonprogramming.net/creating-first-flask-web-app/
+
+sudo apt-get install apache2 mysql-client mysql-server
+	instala apacha para rodar servidores e então instala both mysql client and server
+	era para ele ter perguntado a senha, como não perguntou digitei
+	sudo mysql_secure_installation
+	https://askubuntu.com/questions/766900/mysql-doesnt-ask-for-root-password-when-installing
+	no final das contas ele pediu um monte de coisas entre elas senha para root, que ficou:
+	Gust84Hedgeneck (a mesma)
+sudo apt-get install libapache2-mod-wsgi
+	wsgi is the way that were going to be able to use flask as a developmental framework
+sudo a2enmod wsgi
+cd /var/www/
+sudo mkdir FlaskApp fazer esse comando duas vezes, criar uma pasta dentro da outra
+sudo mkdir FlaskApp
+sudo mkdir static
+sudo mkdir templates
+nano __init__.py
+apt-get install python-pip
+	pip é um sistema de gerenciamento de pacotes usado para instalar e gerenciar pacotes de software escritos na linguagem de programação Python.
+	- pra ver se pip está instalado, pip --version
+sudo pip install virtualenv
+	virtualenv is used to manage Python packages for different projects. Using virtualenv allows you to avoid installing Python packages globally which could break system tools or other projects.
+sudo virtualenv venv
+	cria um virtual environment
+source venv/bin/activate
+	ativa o virtual environment
+sudo pip install flask # instala flask com o virtual environment ativado
+sudo python __init__.py
+	vai rodar o servidor localmente (mas localmente numa cloud, rs)
+Para parar de servir, CTRL+C
+deactivate
+	sai do virtual environment
+	dava pra ver se tava no virtual environment com
+		^C(venv) root@vps15697:/var/www/FlaskApp/FlaskApp#
+nano /etc/apache2/sites-available/FlaskApp.conf
+	setup flask configuration files
+	copia o que está no site
+sudo a2ensite FlaskApp
+service apache2 reload
+
+cd /var/www/FlaskApp
+nano flaskapp.wsgi
+	botei como senha flask_neck
+service apache2 restart
+ifconfig
+	mostra um monte de configuração de IP
