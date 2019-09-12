@@ -35,4 +35,7 @@ usage: git remote [-v | --verbose]
     -v, --verbose         be verbose; must be placed before a subcommand
 
    se já tiver alguma coisa no origin, acho prudente remover e recolocar
-   > git remote remove origin  
+   > git remote remove origin
+
+   - Sempre que reiniciar o computador precisaria entrar no environment e setar as variáveis de ambiente para rodar um > flask run
+   - por isso a melhor maneira de rodar o site é um python flaskblog.py

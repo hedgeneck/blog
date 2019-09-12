@@ -1,0 +1,13 @@
+- Para usar forms e user input usamos a biblioteca flask-wtf
+> pip install flask-wtf
+
+- Como fazer para gerar um bom security token?
+	abre o command, abre o python
+	> import secrets
+	> secrets.token_hex(16)
+	vai gerar uma senha de 16 bytes -> gerou 32 caracteres. ein??
+	dbfd46992a739efa9b8f10ebc97338b4
+
+	Como faz aquela malandragem do sublime de selecionar coisas semelhantes e modificar todas ao mesmo tempo?
+	- para ir selecionando a próxima palavra igual, usar ctrl+d
+	- para selecionar todas as palavras, alt+f3
