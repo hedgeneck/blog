@@ -1,0 +1,73 @@
+instalar o flask-sqlalchemy. Lembrar de estar com o environment ativado.
+> pip install flask-sqlalchemy
+seria legal usar o sqlalchemy não específico para flask, quem sabe uma outra hora
+
+- importar o alchemy
+	from flask_sqlalchemy import SQLAlchemy
+
+- escolher o banco de dados e adicionar o URI na config
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+	- você sabe a diferença entre URI, URL e URN?
+	https://stackoverflow.com/questions/176264/what-is-the-difference-between-a-uri-a-url-and-a-urn
+
+- criar uma instancia de sqlalchemy
+db = SQLAlchemy(app)
+
+- SQLAlchemy permite representar a database structure como classes e essas classes serão chamadas modelos
+
+- Adicionar os Models representados pelas classes Users e Posts
+
+- o banco de dados do blog tem Users e Posts e se trata de uma relação one-to-many pois um User pode autorar vários Posts, mas um Post só pode ter um autor. Adicionar o relacionamento entre Users e Posts
+class User(db.Model):
+	posts = db.relationship('Post', backref='author', lazy=True) [1]
+	- o que isso faz é que podemos usar tanto user1.posts quanto post1.authors
+Adicionar a foreign key em posts. user_id
+	user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False) [2]
+Notar que em [1] Post é maiúsculo pois se refere ao nome da classe e em [2] é minúsculo pois se refere ao nome da tabela.
+Lembrar que geralmente um Model poder ter mapeado o __tablename__ e quando não nomeia provavelmente ele pega o nome da classe e coloca tudo minúsculo
+
+- Quando roda o servidor tem um warning chato pra caralho
+	FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+Para resolver isso coloca em algum lugar
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+- Brincar com o banco de dados no terminal
+> python
+> from flaskblog import db
+> db.create_all() # nesse momento é criado o .db
+# conferir o .db com o sqlite studio
+Podemos brincar adicionando um User e um Post na mão
+> from flaskblog import User, Post
+> user_1 = User(username='Corey', email='C@demo.com', password='password')
+# lembrar que User tem id autoincrement e imagefile com default value
+> db.session.add(user_1) # mas ainda não foi dado o commit
+> user_2 = User(username="JohnDoe", email='jd@demo.com', password='password')
+> db.session.add(user_2)
+> db.session.commit()
+> User.query.all() # pega todos os users
+> User.query.first() # primeiro User
+# outra maneira de pegar o primeiro user
+	> x = User.query.all()
+	> x[0]
+> User.query.filter_by(username='Corey').all() # retorna uma lista
+> user = User.query.filter_by(username='Corey').first() # retorna user sem list
+> user.id , user.username, user.password, etc
+> user = User.query.get(1) # fetch the user with id of 1. id 0 não existe
+> user.posts # acessa os posts do user mas retorna uma empty list
+>>> post_1 = Post(title="Blog 1", content = 'First Post Content!', user_id=user.id)
+>>> post_2 = Post(title="Blog 2", content = 'Second Post Content!', user_id=user.id)
+>>> db.session.add(post_1)
+>>> db.session.add(post_2)
+>>> db.session.commit()
+>>> user.posts
+[Post('Blog 1', '2019-09-14 13:46:37.623081'), Post('Blog 2', '2019-09-14 13:46:37.625082')]
+>>> for post in user.posts:
+...   print(post.title)
+...
+Blog 1
+Blog 2
+>>> post.author
+User('Corey', 'C@demo.com', 'default.jpg') # engraçado como aquele backref='author' funciona sem nem saber direito o que era author
+> db.drop_all() # deleta todas entries e todas tables, aí tem que fazer denovo
+# engraçado como o drop_all() não deletou o arquivo.db, apesar de ter limpado todo o resto
+> db.create_all()

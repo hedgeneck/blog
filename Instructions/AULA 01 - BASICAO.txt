@@ -38,4 +38,7 @@ usage: git remote [-v | --verbose]
    > git remote remove origin
 
    - Sempre que reiniciar o computador precisaria entrar no environment e setar as variáveis de ambiente para rodar um > flask run
-   - por isso a melhor maneira de rodar o site é um python flaskblog.py
+   - por isso a melhor maneira de rodar o site é:
+      - acionar as variáveis de ambiente
+      > env\Scripts\activate
+    um python flaskblog.py
