@@ -1,0 +1,15 @@
+- Em geral em python modulos são como arquivos e packages seriam como namespaces (diretórios?)
+
+- O objetivo principal de packages é evitar circular import
+
+- A questão da circular import e de que o nome do modulo é __main__ foi levantada por Miguel Greenberg numa palestra "Flask at Scale" em 2016 numa Pycon
+
+- Rodando flaskblog.py como um pacote e não diretamente evitaremos esse problema de nomear flaskblog como __main__
+
+- Criar um módulo models.py e copiar as classes do ORM
+
+- quando importar as routes, lembrar de colocar elas depois da inicialização do app, em __innit.py o porque é chato e complicado
+	from blog import routes
+
+- para deletar o site.db tem que desconectar do sqlitestudio
+- notar que com a nova estrutura, o site.db ficou dentro de /blog pois passamos uma relative location para o URI de mysql
